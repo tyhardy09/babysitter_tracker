@@ -1,8 +1,7 @@
 <div class="page-header">
-  <h1>
-    Babysitters
+  <h3>
     <a href="/babysitters/new" class="btn btn-lg btn-success">Add  Babysitter</a>
-  </h1>
+  </h3>
 </div>
 
 <div class="row">
@@ -20,7 +19,7 @@
 
       <% @babysitters.each do |babysitter| %>
       <tr>
-        <td><img src="<%= babysitter.picture %>" alt="" width="200"></td>
+        <td><a href="/babysitters/<%= babysitter.id %>"><img src="<%= babysitter.picture %>" alt="" width="200"></td>
         <td><%= babysitter.name %></td>
         <td><%= babysitter.age %></td>
         <td><%= number_to_phone(babysitter.phone) %></td>
@@ -29,7 +28,6 @@
 
 
         <td>
-          <a href="/babysitters/<%= babysitter.id %>" class="btn btn-primary">Show</a>
           <a href="/babysitters/<%= babysitter.id %>/edit" class="btn btn-warning">Edit</a>
           <a href="/delete_babysitter/<%= babysitter.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
         </td>
