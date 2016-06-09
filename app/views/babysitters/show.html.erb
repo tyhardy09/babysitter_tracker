@@ -6,23 +6,23 @@
   <div class="col-md-12">
     <dl class="dl-horizontal">
 
-      <dt></dt>
-      <td><img src="<%= @babysitter.picture %>" alt="" width="400"></td>
-
-      <dt>Age</dt>
-      <dd><%= @babysitter.age %></dd>
-
       <dt>Phone</dt>
       <dd><%= number_to_phone(@babysitter.phone) %></dd>
 
       <dt>Email</dt>
       <dd><%= mail_to(@babysitter.email) %></dd>
 
+      <dt>Age</dt>
+      <dd><%= @babysitter.age %></dd>
+
       <dt>Hourly Rate</dt>
       <dd><%= number_to_currency(@babysitter.rate) %></dd>
 
       <dt>Notes</dt>
       <dd><%= @babysitter.notes %></dd>
+
+      <dt>Picture</dt>
+      <td><img src="<%= @babysitter.picture %>" alt="" width="400"></td>
 
     </dl>
 
