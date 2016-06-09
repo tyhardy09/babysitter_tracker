@@ -16,7 +16,7 @@
       <dd><%= number_to_phone(@babysitter.phone) %></dd>
 
       <dt>Email</dt>
-      <dd><%= @babysitter.email %></dd>
+      <dd><%= mail_to(@babysitter.email) %></dd>
 
       <dt>Hourly Rate</dt>
       <dd><%= number_to_currency(@babysitter.rate) %></dd>
