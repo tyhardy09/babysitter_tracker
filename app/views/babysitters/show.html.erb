@@ -1,0 +1,41 @@
+<div class="page-header">
+  <h3><%= @babysitter.name %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+
+      <dt></dt>
+      <td><img src="<%= @babysitter.picture %>" alt="" width="400"></td>
+
+      <dt>Age</dt>
+      <dd><%= @babysitter.age %></dd>
+
+      <dt>Phone</dt>
+      <dd><%= number_to_phone(@babysitter.phone) %></dd>
+
+      <dt>Email</dt>
+      <dd><%= @babysitter.email %></dd>
+
+      <dt>Hourly Rate</dt>
+      <dd><%= number_to_currency(@babysitter.rate) %></dd>
+
+      <dt>Notes</dt>
+      <dd><%= @babysitter.notes %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/babysitters" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/babysitters/<%= @babysitter.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_babysitter/<%= @babysitter.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

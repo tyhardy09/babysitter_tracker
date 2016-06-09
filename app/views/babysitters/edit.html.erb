@@ -1,0 +1,91 @@
+<!-- Validation failure messages -->
+<% if @babysitter.errors.any? %>
+  <% @babysitter.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Babysitter #<%= @babysitter.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_babysitter/<%= @babysitter.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for notes -->
+      <div class="form-group">
+        <label for="notes" class="control-label">
+          Notes
+        </label>
+
+        <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @babysitter.notes %></textarea>
+      </div>
+
+      <!-- Label and input for picture -->
+      <div class="form-group">
+        <label for="picture" class="control-label">
+          Picture
+        </label>
+
+        <input type="text" id="picture" name="picture" placeholder="Picture" class="form-control" value="<%= @babysitter.picture %>">
+      </div>
+
+      <!-- Label and input for age -->
+      <div class="form-group">
+        <label for="age" class="control-label">
+          Age
+        </label>
+
+        <input type="text" id="age" name="age" placeholder="Age" class="form-control" value="<%= @babysitter.age %>">
+      </div>
+
+      <!-- Label and input for rate -->
+      <div class="form-group">
+        <label for="rate" class="control-label">
+          Rate
+        </label>
+
+        <input type="text" id="rate" name="rate" placeholder="Rate" class="form-control" value="<%= @babysitter.rate %>">
+      </div>
+
+      <!-- Label and input for email -->
+      <div class="form-group">
+        <label for="email" class="control-label">
+          Email
+        </label>
+
+        <input type="text" id="email" name="email" placeholder="Email" class="form-control" value="<%= @babysitter.email %>">
+      </div>
+
+      <!-- Label and input for phone -->
+      <div class="form-group">
+        <label for="phone" class="control-label">
+          Phone
+        </label>
+
+        <input type="text" id="phone" name="phone" placeholder="Phone" class="form-control" value="<%= @babysitter.phone %>">
+      </div>
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @babysitter.name %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Babysitter
+      </button>
+      or
+      <a href="/babysitters/<%= @babysitter.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
