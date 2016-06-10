@@ -1,22 +1,19 @@
 <div class="page-header">
-  <h3><%= @babysitter.name %></h3>
+  <h3 class="text-info"><strong><%= @babysitter.name %></strong></h3>
 </div>
 
 <div class="row">
   <div class="col-md-12">
     <dl class="dl-horizontal">
 
-      <dt></dt>
-      <td><img src="<%= @babysitter.picture %>" alt="" width="400"></td>
-
-      <dt>Age</dt>
-      <dd><%= @babysitter.age %></dd>
-
       <dt>Phone</dt>
       <dd><%= number_to_phone(@babysitter.phone) %></dd>
 
       <dt>Email</dt>
-      <dd><%= @babysitter.email %></dd>
+      <dd><%= mail_to(@babysitter.email) %></dd>
+
+      <dt>Age</dt>
+      <dd><%= @babysitter.age %></dd>
 
       <dt>Hourly Rate</dt>
       <dd><%= number_to_currency(@babysitter.rate) %></dd>
@@ -24,16 +21,19 @@
       <dt>Notes</dt>
       <dd><%= @babysitter.notes %></dd>
 
+      <dt>Picture</dt>
+      <td><img src="<%= @babysitter.picture %>" alt="" width="400"></td>
+
     </dl>
 
-    <div class="btn-group btn-group-justified">
-      <a href="/babysitters" class="btn btn-primary">
+    <div class="">
+      <a href="/babysitters" class="btn btn-info">
         Back
       </a>
-      <a href="/babysitters/<%= @babysitter.id %>/edit" class="btn btn-warning">
+      <a href="/babysitters/<%= @babysitter.id %>/edit" class="btn btn-info">
         Edit
       </a>
-      <a href="/delete_babysitter/<%= @babysitter.id %>" class="btn btn-danger" rel="nofollow">
+      <a href="/delete_babysitter/<%= @babysitter.id %>" class="btn btn-info" rel="nofollow">
         Delete
       </a>
     </div>

@@ -8,8 +8,9 @@
   <% end %>
 <% end %>
 
+
 <div class="page-header">
-  <h3>Edit Babysitter #<%= @babysitter.id %></h3>
+  <h3 class="text-info">Edit Info for: <strong><%= @babysitter.name %></strong></h3>
 </div>
 
 <div class="row">
@@ -18,23 +19,44 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for notes -->
+      <!-- Label and input for name -->
       <div class="form-group">
-        <label for="notes" class="control-label">
-          Notes
+        <label for="name" class="control-label">
+          Name
         </label>
 
-        <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @babysitter.notes %></textarea>
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @babysitter.name %>">
       </div>
 
       <!-- Label and input for picture -->
       <div class="form-group">
         <label for="picture" class="control-label">
-          Picture
+          Picture URL
         </label>
 
-        <input type="text" id="picture" name="picture" placeholder="Picture" class="form-control" value="<%= @babysitter.picture %>">
+        <input type="text" id="picture" name="picture" placeholder="Picture URL" class="form-control" value="<%= @babysitter.picture %>">
       </div>
+
+
+      <!-- Label and input for phone -->
+      <div class="form-group">
+        <label for="phone" class="control-label">
+          Phone
+        </label>
+
+        <input type="text" id="phone" name="phone" placeholder="Phone" class="form-control" value="<%= @babysitter.phone %>">
+      </div>
+
+      <!-- Label and input for email -->
+      <div class="form-group">
+        <label for="email" class="control-label">
+          Email
+        </label>
+
+        <input type="text" id="email" name="email" placeholder="Email" class="form-control" value="<%= @babysitter.email %>">
+      </div>
+
+
 
       <!-- Label and input for age -->
       <div class="form-group">
@@ -54,34 +76,18 @@
         <input type="text" id="rate" name="rate" placeholder="Rate" class="form-control" value="<%= @babysitter.rate %>">
       </div>
 
-      <!-- Label and input for email -->
+
+
+      <!-- Label and input for notes -->
       <div class="form-group">
-        <label for="email" class="control-label">
-          Email
+        <label for="notes" class="control-label">
+          Notes
         </label>
 
-        <input type="text" id="email" name="email" placeholder="Email" class="form-control" value="<%= @babysitter.email %>">
+        <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @babysitter.notes %></textarea>
       </div>
 
-      <!-- Label and input for phone -->
-      <div class="form-group">
-        <label for="phone" class="control-label">
-          Phone
-        </label>
-
-        <input type="text" id="phone" name="phone" placeholder="Phone" class="form-control" value="<%= @babysitter.phone %>">
-      </div>
-
-      <!-- Label and input for name -->
-      <div class="form-group">
-        <label for="name" class="control-label">
-          Name
-        </label>
-
-        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @babysitter.name %>">
-      </div>
-
-      <button class="btn btn-warning">
+      <button class="btn btn-info">
         Update Babysitter
       </button>
       or

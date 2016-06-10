@@ -1,8 +1,15 @@
+<div class="container"  style="margin-top:25px" >
+    <div class="row" >
+      <div class="col-md-1"></div>
+      <div class="col-md-10">  <a href="/babysitters"><img src="assets/images/kelloggkids.jpg" class="img-responsive" /></a></div>
+      <div class="col-md-1"></div>
+  </div>
+</div>
+
 <div class="page-header">
-  <h1>
-    Babysitters
-    <a href="/babysitters/new" class="btn btn-lg btn-success">Add  Babysitter</a>
-  </h1>
+  <h3>
+    <a href="/babysitters/new" class="btn btn-lg btn-info">Add  Babysitter</a>
+  </h3>
 </div>
 
 <div class="row">
@@ -20,18 +27,17 @@
 
       <% @babysitters.each do |babysitter| %>
       <tr>
-        <td><img src="<%= babysitter.picture %>" alt="" width="200"></td>
+        <td><a href="/babysitters/<%= babysitter.id %>"><img src="<%= babysitter.picture %>" alt="" width="200"></td>
         <td><%= babysitter.name %></td>
         <td><%= babysitter.age %></td>
         <td><%= number_to_phone(babysitter.phone) %></td>
-        <td><%= babysitter.email %></td>
+        <td><%= mail_to(babysitter.email) %></td>
         <td><%= number_to_currency(babysitter.rate) %></td>
 
 
         <td>
-          <a href="/babysitters/<%= babysitter.id %>" class="btn btn-primary">Show</a>
-          <a href="/babysitters/<%= babysitter.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_babysitter/<%= babysitter.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="/babysitters/<%= babysitter.id %>/edit" class="btn btn-info">Edit</a>
+          <a href="/delete_babysitter/<%= babysitter.id %>" class="btn btn-info" rel="nofollow">Delete</a>
         </td>
       </tr>
       <% end %>

@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  devise_for :parents
+  
+  get "/", :controller => "babysitters", :action => "index"
+
   # Routes for the Babysitter resource:
   # CREATE
   get "/babysitters/new", :controller => "babysitters", :action => "new"
