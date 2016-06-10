@@ -3,4 +3,7 @@ class Babysitter < ActiveRecord::Base
   validates :phone, :presence => true
   validates :phone, length: { minimum: 10 }
   validates :phone, length: { maximum: 10 }
+
+  belongs_to :parent
+
 end
